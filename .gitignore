@@ -1,3 +1,10 @@
+# Ignore Netflix data
+data/*.txt
+data/*.csv
+data/README
+
+cache/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
