@@ -27,8 +27,8 @@ for filename in glob("data/combined_data_*.txt"):
                 ALL_RATINGS_LEN += 1
 
 
-USER_RATING = {user: sum(ratings.values())/(10 + len(ratings)) for user, ratings in USER_MOVIE_RATING.items()}
-MOVIE_RATING = {movie: sum(ratings.values())/(5 + len(ratings)) for movie, ratings in MOVIE_USER_RATING.items()}
+USER_RATING = {user: sum(ratings.values())/len(ratings) for user, ratings in USER_MOVIE_RATING.items()}
+MOVIE_RATING = {movie: sum(ratings.values())/len(ratings) for movie, ratings in MOVIE_USER_RATING.items()}
 
 with open("cache/user_rating.p", "wb") as f:
     pickle.dump(USER_RATING, f)
